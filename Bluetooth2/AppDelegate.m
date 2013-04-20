@@ -2,13 +2,16 @@
 //  AppDelegate.m
 //  Bluetooth2
 //
-//  Created by Harish Ramakrishnan on 2/14/13.
-//  Copyright (c) 2013 Harish Ramakrishnan. All rights reserved.
+//  Created by Gurupur Sushma Pai & Aparna Srinivasan on 2/19/13.
+//  Copyright (c) Gurupur Sushma Pai & Aparna Srinivasan All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation AppDelegate
+
+@synthesize rootViewController = _rootViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,12 +38,27 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [FBSession.activeSession handleDidBecomeActive];
+
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [FBSession.activeSession close];
+    
+
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+// FBSample logic
+// If we have a valid session at the time of openURL call, we handle Facebook transitions
+// by passing the url argument to handleOpenURL; see the "Just Login" sample application for
+// a more detailed discussion of handleOpenURL
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBSession.activeSession handleOpenURL:url];
+}
 @end

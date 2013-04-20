@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>scores</key>
+	<array>
+		<integer>20</integer>
+	</array>
+	<key>totalGames</key>
+	<integer>1</integer>
+	<key>totalWon</key>
+	<integer>1</integer>
+	<key>recentScore</key>
+	<integer>20</integer>
+</dict>
+</plist>
