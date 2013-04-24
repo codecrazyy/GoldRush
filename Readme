@@ -1,0 +1,29 @@
+Overview:
+The “Gold Rush” is a simple multiplayer strategy game. 
+The objective of the game is to collect as much gold as possible, without being killed by the opponent player or before the timer expires.
+
+Game Setup:
+Before the game starts, each player is given option to choose the opponent player. This is done through Bluetooth.
+Once both players have established a connection via Bluetooth, the players are ready to start the game.
+  
+Game Logic:
+•	The game starts with a map being displayed to both the players. This map shows the gold bags placed at random places on the screen.
+•	Each player is given 3 lives. This indicates how many chances the user is left with. Once the player loses all the lives, the game comes to an end.
+	 The first player makes a move towards the gold. This movement is basically done by swipe gesture, which creates a free hand drawing on the screen, indicating the path.
+•	Once the player releases the finger, the character (icon) starts moving on the path that is drawn and collects gold nuggets by clicking the gold bar icon in the top left corner.
+•	This movement of the first player is shown to the opponent player so that he can guess which gold bag other player is targeting to collect.
+•	A timer also starts when the user moves from his home base. The user has to return to the base camp (starting point) before the timer expires; else the player loses a chance.
+•	During his quest for collecting gold, the first player can place mines on the path travelled. These mines will be only visible to him/ her but not the opponent player. The player can tap on the icon of mine available at the top right corner to place it at the point.
+•	Once the player comes back to the base camp (starting point), the next turn goes to the opponent player.
+•	The opponent player starts his play to collect gold keeping in mind that the other player may have placed mines on the way. He/she has to figure out the best path to reach the gold within the given time without stepping on the mine placed by the other player. 
+•	In case the opponent player passes/steps on a mine, he loses a life. A skeleton icon is displayed on the screen at that point indicating the player died there. The gold collected by him in that turn is also displayed. The next turn goes to the first player.
+•	The first player can make a decision to steal the gold from the skeleton or continue with the normal game move.
+•	The game comes to an end if any player has lost all the chances (three lives).
+•	The player with the maximum gold collected wins the game.
+Edge Cases:
+Below are the edge cases that are handled in the program:
+•	When the player1 is playing the game, the screen is disabled for the opponent player.
+•	The tap on the screen during the move is handled.
+•	The mines are not placed when the image is moving. Both the mine and the gold button are disabled until the image comes to a stop.
+•	Once the game comes to an end, alert is send to the opponent player indicating the end of game.
+•	In case the Bluetooth connectivity is lost, the first screen is displayed for both players and they can start the game again.
